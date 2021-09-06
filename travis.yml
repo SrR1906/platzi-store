@@ -1,0 +1,26 @@
+language: node_js
+cache: 
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '14'
+
+git:
+  depth: 3
+
+script:
+  - yarn build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: dist/ #la carpeta de archivos compilada
+  target-branch: gh-page
+  commit-message: "Deploy del proyecto"
+  on:
+    branch: main 
+    #si hay un cambio en main, ejecuta todo el code, compila y envia
+    #hace un deploy
