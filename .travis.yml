@@ -21,6 +21,6 @@ deploy:
   target-branch: gh-page
   commit-message: "Deploy del proyecto"
   on:
-    branch: main 
+    branch: master 
     #si hay un cambio en main, ejecuta todo el code, compila y envia
     #hace un deploy
